@@ -1,5 +1,4 @@
 import { date, integer, numeric, pgTable, text, uuid, varchar } from "drizzle-orm/pg-core";
-import { setMaxListeners } from "events";
 
 export const student = pgTable("student", {
     id: uuid("id").notNull(),

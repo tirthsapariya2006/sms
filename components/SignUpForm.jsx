@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const SignUpForm = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [passwordOne, setPasswordOne] = useState("");
   const [passwordTwo, setPasswordTwo] = useState("");
@@ -30,7 +31,16 @@ export const SignUpForm = () => {
       <div>
         <div>
           <input
-            className="border-2 rounded-md"
+            className="border-2 rounded-md mb-1"
+            placeholder="Name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            className="border-2 rounded-md mb-1"
             placeholder="Email"
             type="text"
             value={email}
@@ -39,7 +49,7 @@ export const SignUpForm = () => {
         </div>
         <div>
           <input
-            className="border-2 rounded-md"
+            className="border-2 rounded-md mb-1"
             placeholder="Password"
             type="text"
             value={passwordOne}
@@ -48,7 +58,7 @@ export const SignUpForm = () => {
         </div>
         <div>
           <input
-            className="border-2 rounded-md"
+            className="border-2 rounded-md mb-1"
             placeholder="Confirm Password"
             type="text"
             value={passwordTwo}
