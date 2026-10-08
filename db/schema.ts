@@ -2,7 +2,6 @@ import { date, integer, numeric, pgTable, text, uuid, varchar } from "drizzle-or
 
 export const student = pgTable("student", {
     id: uuid("id").notNull(),
-    firebaseId: text("firebase_id").notNull(),
     name: text("name").notNull(),
     email: text("email").unique().notNull(),
     rollno: numeric("rollno").notNull(),
@@ -14,7 +13,6 @@ export const student = pgTable("student", {
 
 export const teacher = pgTable("teacher", {
     id: uuid().notNull(),
-    firebaseId: text("firebase_id").notNull(),
     name: text("name").notNull(),
     email: text("email").unique().notNull(),
     division: varchar("division", { length: 1 }),
@@ -27,7 +25,6 @@ export const teacher = pgTable("teacher", {
 
 export const admin = pgTable("admin", {
     id: uuid().notNull(),
-    firebaseId: text("firebase_id").notNull(),
     name: text("name").notNull(),
     email: text("email").unique().notNull(),
     role: text("role").default("admin"),

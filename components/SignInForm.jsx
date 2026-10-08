@@ -1,7 +1,5 @@
 "use client";
 
-import { auth } from "@/lib/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -10,20 +8,13 @@ export const SignInForm = () => {
   const [password, setPassword] = useState("");
 
   const handleSignIn = () => {
-    signInWithEmailAndPassword(auth, email, password)
-    .then(authUser => {
-      console.log("User Signed In Successfully");
-      console.log(authUser.user);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+    
   }
   return (
     <>
       <div>
         <div>
-          <div className="mb-2">Login with E-mail</div>
+          {/* <div className="mb-2">Login with E-mail</div> */}
           <div>
             <input
               className="border-2 rounded-md mb-1"
@@ -51,15 +42,6 @@ export const SignInForm = () => {
               <Link href={"/signup"}> click here </Link>
             </span>
             create new account
-          </div>
-        </div>
-
-        <div>
-          <div className="mb-2">Login with Google</div>
-          <div>
-            <button className="border-2 rounded-md">
-              Continue with Google
-            </button>
           </div>
         </div>
       </div>
